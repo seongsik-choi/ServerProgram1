@@ -9,7 +9,6 @@
  -> 배열의 문제점 
  
  Q) 0310_homework.jsp를 수정
- 
  A) 이미지의 갯수를 변경해도 정상적으로 출력되도록 소스를 제작
  A)ArrayList 사용(Collection) : .jsp에서도 java.util import 필요
  A) <%@page import="java.util.ArrayList"%> 
