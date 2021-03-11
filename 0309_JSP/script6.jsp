@@ -43,9 +43,9 @@
   <DL>
     <DT>방문후기</DT>
     <%-- 데이터에 대한 설명(DD)(IMG) --%>
-    <DD><IMG src='./images/coffee01.jpg' style='width: 20%;'> 커피향이 너무 좋았어요~</DD>
-    <DD><IMG src='./images/coffee02.jpg' style='width: 20%;'> 다음에 또오고 싶어요~</DD>
-    <DD><IMG src='./images/coffee03.jpg' style='width: 20%;'> 언덕에 있어 바람이 잘 불어옵니다.</DD>  </DL> 
+    <DD><IMG src='../images/coffee01.jpg' style='width: 20%;'> 커피향이 너무 좋았어요~</DD>
+    <DD><IMG src='../images/coffee02.jpg' style='width: 20%;'> 다음에 또오고 싶어요~</DD>
+    <DD><IMG src='../images/coffee03.jpg' style='width: 20%;'> 언덕에 있어 바람이 잘 불어옵니다.</DD>  </DL> 
   <HR>  <%-- 수평선을 출력. 문단의 구분을 표시 --%>
   
 </body>

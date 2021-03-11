@@ -17,7 +17,7 @@
     ├─core           <-- JSP
     ├─META-INF
     └─WEB-INF     <-- web.xml등 환경 설정 파일
-        └─lib         <-- 데이터베이스 Driver등 저장
+        └─lib         <-- 데이터베이스 Driver등 저장    
   --%>     
 <!DOCTYPE html>
 <html>
@@ -28,8 +28,6 @@
 </head>
 <body>
 
-<%--  일반적인 java 코드가 쓰임 (scriptlet)
-       ex) "부등호% JAVA code &부등호--%>
 <% // 스크립틀릿
 String name = "성식1";
 int kor = 90;

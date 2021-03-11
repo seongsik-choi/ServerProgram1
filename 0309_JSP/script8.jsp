@@ -20,7 +20,7 @@
  public String isImage(String fname){     
   fname  = fname.toLowerCase();  
   if (fname.endsWith(".jpg") || fname.endsWith(".gif") || fname.endsWith(".png")){
-    return "<IMG src = './images/"+fname+"'>";  //  TAG안에 Single quote
+    return "<IMG src = '../images/"+fname+"'>";  //  TAG안에 Single quote
   }else{
     return "이미지가 아닙니다.";
   }

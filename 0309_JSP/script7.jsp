@@ -50,7 +50,7 @@
 if (isImage("coffee04.jpg") == true){   // if (isImage("COFFEE04.jpg")){
   // System.out.println("coffee04.jpg 이미지"); // Console
 %> <%-- JAVA가 끝났기에 끊기 --%>
-    <IMG src = "./images/coffee04.jpg">
+    <IMG src = "../images/coffee04.jpg">
 <%   // if문을 연결하기위해 JAVA 태그 연결
 }     // if문 종료
 %>  <%-- if문을 연결하기위해 JAVA 태그 연결 --%>
@@ -60,7 +60,7 @@ if (isImage("coffee04.jpg") == true){   // if (isImage("COFFEE04.jpg")){
 <%  // 자바코드 작성
 if (isImage("coffee05.jpgx") == true){  
 %> 
-    <IMG src = "./images/coffee05.jpgx">
+    <IMG src = "../images/coffee05.jpgx">
     
 <%   // 자바코드 연결
 } else{
@@ -73,7 +73,7 @@ if (isImage("coffee05.jpgx") == true){
 <%  // 자바코드 작성
 if (isImage("coffee06.jpg") == true){  
 %> 
-    <IMG src = "./images/coffee06.jpg">
+    <IMG src = "../images/coffee06.jpg">
     
 <%   // 자바코드 연결
 } else{

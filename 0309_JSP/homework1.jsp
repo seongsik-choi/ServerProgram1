@@ -39,17 +39,17 @@ java.lang.ArrayIndexOutOfBoundsException: 배열의 크기에 비해 저장하�
 */
 
 String[] images = new String[11];       // 10개 배열 생성
-images[0] = "./images/food1.jpg";     // 각 배열에 경로 지정
-images[1] = "./images/food2.jpg";
-images[2] = "./images/food3.jpg";
-images[3] = "./images/food4.jpg";
-images[4] = "./images/food5.jpg";
-images[5] = "./images/food6.jpg";
-images[6] = "./images/food7.jpg";
-images[7] = "./images/food8.jpg";
-images[8] = "./images/food9.jpg";
-images[9] = "./images/food10.jpg";
-images[10] = "./images/food11.jpg";
+images[0] = "../images/food1.jpg"; // 각 배열에 경로 지정
+images[1] = "../images/food2.jpg";
+images[2] = "../images/food3.jpg";
+images[3] = "../images/food4.jpg";
+images[4] = "../images/food5.jpg";
+images[5] = "../images/food6.jpg";
+images[6] = "../images/food7.jpg";
+images[7] = "../images/food8.jpg";
+images[8] = "../images/food9.jpg";
+images[9] = "../images/food10.jpg";
+images[10] = "../images/food11.jpg";
 System.out.println("images.length : " + images.length);
 %>
 
