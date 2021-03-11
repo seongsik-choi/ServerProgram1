@@ -59,16 +59,16 @@
 <% // Scriptlet
  String[] files = new String[10];
  
- files[0] = "./images/tu01.jpg";
- files[1] = "./images/tu02.jpg";
- files[2] = "./images/tu03.jpg";
- files[3] = "./images/tu04.jpg";
- files[4] = "./images/tu05.jpg";
- files[5] = "./images/tu06.jpg";
- files[6] = "./images/tu07.jpg";
- files[7] = "./images/tu08.jpg";
- files[8] = "./images/tu09.jpg";
- files[9] = "./images/tu10.jpg";
+ files[0] = "../images/tu01.jpg";
+ files[1] = "../images/tu02.jpg";
+ files[2] = "../images/tu03.jpg";
+ files[3] = "../images/tu04.jpg";
+ files[4] = "../images/tu05.jpg";
+ files[5] = "../images/tu06.jpg";
+ files[6] = "../images/tu07.jpg";
+ files[7] = "../images/tu08.jpg";
+ files[8] = "../images/tu09.jpg";
+ files[9] = "../images/tu10.jpg";
  
 /* request 객체의 getParameter() Method : 사용자가 입력한 데이터를 가져옴 
   int index = Integer.parseInt("index"); // 형변환 필요
@@ -83,7 +83,8 @@
  // 숫자를 요청받겠다고 했는데 숫자를 전달받지 못한 경우
  
  // url 뒤 : ?: 보내는 값을 명시한다는 뜻(파라미터의 시작) 입력 후 index=num
- // http://localhost:9090/jsp_test/core/t7_Request1.jsp?index=3 : Console로 찍어줌
+ // http://localhost:9090/jsp_test/core/o310/t7_Request1.jsp?index=1&filename=tu01.jpg 
+ // : Console로 찍어줌
  
  %>
   <%-- Q) ?index=1 request 해도 실제 tu01.jpg가 나오지 않음 
@@ -112,7 +113,7 @@
  String filename  = request.getParameter("filename");
  %>
   filename : <%= filename %> <br> <%-- Filename 출력 후 + enter --%>
-  <IMG src = './images/<%=filename %>' style=' width:600px; height:350px;'>
+  <IMG src = '../images/<%=filename %>' style=' width:600px; height:350px;'>
  
 </body>
 </html>

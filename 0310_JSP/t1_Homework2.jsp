@@ -34,18 +34,23 @@
 <H2> 음식 축제 </H2>
 
 <% // JSP Code
+/* 
+<img src="image.jpg"> -같은 폴더안의 image사용
+<img src="file/image.jpg"> -하위폴더 file안의 image 사용
+<img src="../file/image.jpg"> -상위폴더 file안의 image 사용  
+*/
 ArrayList<String> list = new ArrayList<String>();
-list.add(0, "./images/food1.jpg");
-list.add(1, "./images/food2.jpg");
-list.add(2, "./images/food3.jpg");
-list.add(3, "./images/food4.jpg");
-list.add(4, "./images/food5.jpg");
-list.add(5, "./images/food6.jpg");
-list.add(6, "./images/food7.jpg");
-// list.add(7, "./images/food8.jpg");
-// list.add(8, "./images/food9.jpg");
-// list.add(9, "./images/food10.jpg");
-// list.add(10, "./images/food11.jpg");
+list.add(0, "../images/food1.jpg");
+list.add(1, "../images/food2.jpg");
+list.add(2, "../images/food3.jpg");
+list.add(3, "../images/food4.jpg");
+list.add(4, "../images/food5.jpg");
+list.add(5, "../images/food6.jpg");
+list.add(6, "../images/food7.jpg");
+// list.add(7, "../images/food8.jpg");
+// list.add(8, "../images/food9.jpg");
+// list.add(9, "../images/food10.jpg");
+// list.add(10, "../images/food11.jpg");
 System.out.println("list.size() : " + list.size());
 %>
 

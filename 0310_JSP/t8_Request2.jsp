@@ -13,7 +13,7 @@
   세금(10%): 240,000 원
   실수령액: 2,160,000 원
   처리 시간: 2020. 3. 19 오후 12:07:16
-   http://localhost:9090/jsp_test/core/t8_request2.jsp?pay=1000000&su=2000000
+   http://localhost:9090/jsp_test/core/o310/t8_Request2.jsp?pay=1000000&su=2000000
 --%>
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ page import="java.util.Date" %>
@@ -36,7 +36,7 @@
   int tax = (int)(tot*0.1);  // 세금
   
   DecimalFormat df = new DecimalFormat("#,###,###원"); 
-  Date date = new Date(); // 날짜 처리ㄴ
+  Date date = new Date(); // 날짜 처리
   String date_str = date.toLocaleString(); // 2. 처리 시간: <%=date.toLocaleString() 퍼센>
   
  %>

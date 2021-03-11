@@ -2,7 +2,7 @@
 0310_[실습 2] 온라인 적금 계산기
 - URL 주소로 월 입금액, 적금 기간 입력 
 - 전달값이 2개 이상이면 &로 구분
-   http://localhost:9090/jsp_test/core/t9_Request3.jsp?mon=200000&period=24
+   http://localhost:9090/jsp_test/core/o310/t9_Request3.jsp?mon=200000&period=24
 
   [실행 화면]
   적금 온라인 계산기
