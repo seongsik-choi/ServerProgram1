@@ -1,0 +1,130 @@
+<%--
+0312_
+2. SELECT 태그의 초기값 설정, 
+3. RADIO 태그의 초기값 설정
+4. CheckBox 태그의 초기값 설정
+   - CheckBox의 name을 동일하지 않게 생성할 것
+      예) trip0, trip1, trip2, trip3, trip4
+     "문자열".trim(): 문자열 좌우의 공백을 제거
+
+ Q) 일반배열과(문자열 -> 배열형) 드롭다운(선택, 다중선택)
+- 3항 연산자: (조건)?참:거짓
+ --%>
+<%@ page contentType="text/html; charset=UTF-8" %>
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>output_form2.jsp</title>
+<style type="text/css">
+  *{ font-family: Malgun Gothic; font-size: 26px;}
+</style>
+</head>
+<body>
+
+<%
+// 1) 일반 배열로 출력하기(문자열형으로 만들어서 넣는 방법)
+// 문자열을 분할하는 메서드 = split("/"); 단위로 분할
+String trips = "오스트리아/베트남/아이슬란드/스위스/캐나다";
+String[] trips_array = trips.split("/");    
+%>
+
+여행할 국가 순위<br>
+<UL style="list-style-type: decimal;">  <!-- 순서가없는 리스트지만 style 지정 : decimal  -->
+  <%
+  for (int i=0; i< trips_array.length; i++) { %>
+    <LI><%=trips_array[i] %></LI>
+  <%
+  }%>
+</UL>
+
+여행할 국가(SELECT, Default)
+<SELECT name="travel">
+  <%
+  for (int i=0; i< trips_array.length; i++) { %>
+    <OPTION value="<%=trips_array[i] %>"><%=trips_array[i] %></OPTION>
+  <%
+  }%>  
+</SELECT><BR>
+
+
+여행 국가 기본 선택 1(스위스 : SELECT, multiple):
+<SELECT name="travel" multiple="multiple"> <!-- multiple 속성 적용 다중 선택 -->
+  <%
+  for (int i=0; i< trips_array.length; i++) {
+    if (trips_array[i].equals("스위스")) { %>
+      <OPTION value="<%=trips_array[i] %>" selected="selected"><%=trips_array[i] %></OPTION>
+    <%  
+    } else { %>
+      <OPTION value="<%=trips_array[i] %>"><%=trips_array[i] %></OPTION>
+    <%  
+    } %>
+  <%
+  }%>  
+</SELECT><BR><BR>
+
+
+여행 국가 기본 선택 2(아이슬란드 : SELECT):
+<SELECT name="travel" >
+  <%
+  for (int i=0; i< trips_array.length; i++) {%>
+    <OPTION value="<%=trips_array[i] %>" 
+      <%=(trips_array[i].equals("아이슬란드"))?"selected='selected'":"" %>><%=trips_array[i] %></OPTION>
+  <%
+  }%>  
+</SELECT><BR><BR>
+
+
+여행 국가 기본 선택 3(스위스 : radio box)<br>
+<%
+for (int i=0; i < trips_array.length; i++) {
+%>
+  <label style="cursor: pointer;" >
+    <input type="radio" name="travel"  value="<%=trips_array[i]%>"
+               <%=(trips_array[i].equals("스위스")?"checked='checked'":"") %>><%=trips_array[i]%>
+  </label>
+<%  
+}
+%><BR><BR>
+
+여행할 국가(오스트리아, 아이슬란드, 스위스 : CheckBox)<br>
+<%!
+public String select(String area, String select_area) {
+  String sw = "";
+  String[] areas = area.split(",");
+  System.out.println("---------------------------------");
+  for (int i=0; i<areas.length; i++) {
+    System.out.println("-> " + i);
+    // System.out.println(">" + areas[i].trim() + "<");
+    if (areas[i].trim().equals(select_area)) {
+      sw = "checked='checked'";
+      System.out.println(select_area + " 발견됨");
+      break;
+    }
+  }  
+  return sw;
+}
+%>
+
+<%
+for (int i=0; i < trips_array.length; i++) {
+  System.out.println("---------------------------------");
+  System.out.println("-> 전체 국가중에 " + trips_array[i] + " 비교");
+%>
+  <label style="cursor: pointer;">
+    <input type="checkbox" name="travel" value="<%=trips_array[i]%>"
+               <%=select("오스트리아, 아이슬란드, 스위스", trips_array[i]) %>><%=trips_array[i]%>
+  </label><br>
+<%  
+}
+%>
+<br>
+
+
+</body>
+</html>
+
+
+
+
