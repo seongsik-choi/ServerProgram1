@@ -23,6 +23,8 @@
 </head>
 <body>
 
+ <!-- POST방식의 Mthod -->
+<form name='frm' action='./t10_output_proc2.jsp' method='POST'>
 <%
 // 1) 일반 배열로 출력하기(문자열형으로 만들어서 넣는 방법)
 // 문자열을 분할하는 메서드 = split("/"); 단위로 분할
@@ -31,16 +33,23 @@ String[] trips_array = trips.split("/");
 %>
 
 여행할 국가 순위<br>
+&nbsp;1)For문을 이용한 List 출력
 <UL style="list-style-type: decimal;">  <!-- 순서가없는 리스트지만 style 지정 : decimal  -->
-  <%
+  <% 
   for (int i=0; i< trips_array.length; i++) { %>
     <LI><%=trips_array[i] %></LI>
   <%
   }%>
 </UL>
 
-여행할 국가(SELECT, Default)
-<SELECT name="travel">
+&nbsp; 2) 여행할 국가(input를 이용한 직접 입력)
+<input type='text' name='travel1' 
+           placeholder="ex)오스트리아/베트남/아이슬란드/스위스/캐나다 중 입력하시오." 
+           autofocus="autofocus" style="width: 70%;">  <BR><BR>
+           <%-- placeholder="도움말": 입력 도움말 출력 --%>
+
+&nbsp; 3) 여행할 국가 기본 선택(오스트리아, 단일선택)
+<SELECT name="travel3">
   <%
   for (int i=0; i< trips_array.length; i++) { %>
     <OPTION value="<%=trips_array[i] %>"><%=trips_array[i] %></OPTION>
@@ -48,9 +57,18 @@ String[] trips_array = trips.split("/");
   }%>  
 </SELECT><BR>
 
+&nbsp; 4) 여행 국가 기본 선택 2(아이슬란드, 단일선택)
+<SELECT name="travel4" >
+  <%
+  for (int i=0; i< trips_array.length; i++) {%>
+    <OPTION value="<%=trips_array[i] %>" 
+      <%=(trips_array[i].equals("아이슬란드"))?"selected='selected'":"" %>><%=trips_array[i] %></OPTION>
+  <%
+  }%>  
+</SELECT><BR><BR>
 
-여행 국가 기본 선택 1(스위스 : SELECT, multiple):
-<SELECT name="travel" multiple="multiple"> <!-- multiple 속성 적용 다중 선택 -->
+&nbsp; 5) 여행 국가 선택 다중(SELECT, 다중 선택)
+<SELECT name="travel5" multiple="multiple"> <!-- multiple 속성 적용 다중 선택 -->
   <%
   for (int i=0; i< trips_array.length; i++) {
     if (trips_array[i].equals("스위스")) { %>
@@ -65,30 +83,33 @@ String[] trips_array = trips.split("/");
 </SELECT><BR><BR>
 
 
-여행 국가 기본 선택 2(아이슬란드 : SELECT):
-<SELECT name="travel" >
-  <%
-  for (int i=0; i< trips_array.length; i++) {%>
-    <OPTION value="<%=trips_array[i] %>" 
-      <%=(trips_array[i].equals("아이슬란드"))?"selected='selected'":"" %>><%=trips_array[i] %></OPTION>
-  <%
-  }%>  
-</SELECT><BR><BR>
-
-
-여행 국가 기본 선택 3(스위스 : radio box)<br>
+&nbsp; 6) 여행 국가 선택(radiobox, 기본선택 되어있는 경우)<br>
 <%
 for (int i=0; i < trips_array.length; i++) {
 %>
   <label style="cursor: pointer;" >
-    <input type="radio" name="travel"  value="<%=trips_array[i]%>"
+    <input type="radio" name="travel6"  value="<%=trips_array[i]%>"
                <%=(trips_array[i].equals("스위스")?"checked='checked'":"") %>><%=trips_array[i]%>
   </label>
 <%  
 }
 %><BR><BR>
 
-여행할 국가(오스트리아, 아이슬란드, 스위스 : CheckBox)<br>
+  <%-- radio 버튼이 선택이 되지않은 경우-> 메모리 참조 no(null)
+           Q) 선택되지않는 경우, if~else문을 통해 메시지 출력--%>
+&nbsp; 7) 여행 국가 선택(radiobox, 기본선택no, 선택안하면 선택하라고 반환)<br>
+<%
+for (int i=0; i < trips_array.length; i++) {
+%>
+  <label style="cursor: pointer;" >
+    <input type="radio" name="travel7"  value="<%=trips_array[i]%>"
+               ><%=trips_array[i]%>
+  </label>
+<%  
+}
+%><BR><BR>
+
+&nbsp; 8) 여행할 국가(오스트리아, 아이슬란드, 스위스 : CheckBox)<br>
 <%!
 public String select(String area, String select_area) {
   String sw = "";
@@ -113,15 +134,19 @@ for (int i=0; i < trips_array.length; i++) {
   System.out.println("-> 전체 국가중에 " + trips_array[i] + " 비교");
 %>
   <label style="cursor: pointer;">
-    <input type="checkbox" name="travel" value="<%=trips_array[i]%>"
+    <input type="checkbox" name="travel8" value="<%=trips_array[i]%>"
                <%=select("오스트리아, 아이슬란드, 스위스", trips_array[i]) %>><%=trips_array[i]%>
-  </label><br>
+  </label><br>  
+  
 <%  
 }
 %>
 <br>
 
+<br>     
+  <button type="submit">등록</button> 
 
+  </form>
 </body>
 </html>
 
