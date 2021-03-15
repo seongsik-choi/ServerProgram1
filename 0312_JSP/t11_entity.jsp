@@ -1,5 +1,6 @@
 <%-- 
 0312_02] HTML 특수 문자 Entity
+A) 태그의 구조와 관련된 문자는 특수문자로 변환하여 출력 필수! = Entity
  - 특수 문자를 고유 name, 10, 16진수로 표현 가능
  - 태그명 자체를 출력하려면 지정된 코드명으로 선언
  - https://en.wikipedia.org/wiki/List_of_XML_and_HTML_character_entity_references
@@ -9,6 +10,9 @@
  - 10진수 : &#32;
  - 16진수 : &#x20;
  
+  &gt;   // 오른쪽 괄호    &lt;   // 왼쪽 괄호      &amp;   // &출력
+  &apos;  //  '(Single quotation)      &quot;   //  "(Double quotation) 
+  
  [03] HTTP 상태 코드
 - https://ko.wikipedia.org/wiki/HTTP_%EC%83%81%ED%83%9C_%EC%BD%94%EB%93%9C
 - 200(성공): 서버가 요청을 제대로 처리한 경우
@@ -45,7 +49,7 @@
 <H2>Double quotation의 사용</H2>   <!-- &quot -->
 <input type='text' value='"9월 단풍"'
           style='width: 80%;'>
-<input type='text' value="&quot;10월 설악산&quot;"  
+<input type='text' value='&quot;10월 설악산&quot;'
           style='width: 80%;'>
           <br>
  
