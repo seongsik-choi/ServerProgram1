@@ -36,3 +36,4 @@ ___
 * t10_output_form2.jsp : SELECT OPTION, RADIO, CHECKBOX, request.getParameter, request.getParameterValues, .indexOf(배열[]>=0) 복습  
 ___   
 * 0315 : 배웠던 내용을 통한 프로그램 만들기(from, proc.jsp)  
+* 0315 : [13] CSS(Cascading Style Sheet)의 사용, SPAN, DIV 기본 사용법  
