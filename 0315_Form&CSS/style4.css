@@ -1,0 +1,27 @@
+/*
+0315_
+4. CSS의 파일 분리
+- 1개 이상의 JSP 페이지에 CSS가 반복해서 사용될 경우
+- 사용: <link href="../css/style0.css" rel="Stylesheet" type="text/css"> 
+*/
+
+* { font-family: Malgun Gothic; font-size: 26px;}  /* 모든 태그에 적용 */
+  .focus1 {       /* class='focus1'  */
+    font-weight: bold; 
+    font-size: 32px; 
+    color: #00FF00; 
+    background-color: #FFFF00;
+  }
+  .focus2 {
+    font-weight: bold; 
+    font-size: 32px; 
+    color: #FFFFFF; 
+    background-color: #FF0000;
+  }  
+
+  #ms {  /* id='ms' */
+    font-weight: bold; 
+    font-size: 32px; 
+    color: #FFFFFF; 
+    background-color: #0000FF;
+  }
