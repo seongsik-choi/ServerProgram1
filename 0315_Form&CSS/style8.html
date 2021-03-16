@@ -1,0 +1,81 @@
+<!--0316
+ 4. 각각의 태그의 margin, padding 속성을 0px로 설정하고 CSS 적용 시 
+    화면에 HTML 태그를 배치할 때 태그로인한 속성 때문에 발행할 수 있는 영역 문제 해결
+ -> 기본 태그들이 default로 padding margin을 갖고있는데 이를 CSS로 적용 
+  
+  /* 모든 태그에 적용 : 마진, 패딩 전부 0으로 */
+  * {
+     font-family: Malgun Gothic; 
+     font-size: 26px; 
+     margin: 0px;  /* top right bottom left */
+     padding: 0px;
+     color: #555555;}  
+  
+ 5. CSS link 설정시 절대 경로의 지정 : style.css등의 파일을 기준으로 경로를 지정 
+    background: url(./images/bu6.gif) left center no-repeat;
+ 
+ ->2021부터 M/S는 I/E를 포기하고 크롬과 같은 엔진(플랫폼)을 사용하여 엣지를 제공함. 
+ 6. 브러우저별 차이가 발생하는 기능을 통일할 경우 선언, A 태그에 CSS 태그의 버튼 설정 
+  - -webkit-appearance : Chrome, Safari 계열(비 Internet Explorer)
+  - -moz-appearance : Internet Explorer 계열
+  1) 선언
+   A.button {
+     -webkit-appearance: button;
+     -moz-appearance: button;
+      appearance: button;}
+  2) 사용
+    <A class='button' style='text-decoration: none; ' href='./create_file1_form.jsp?categoryno=
+    <%=categoryno %>&pdsno=<%=pdsno %>'>새로운 파일 등록</A>
+  
+  7. A 태그에 다양한 CSS 적용
+   1) 선언
+   .basiclink { font-size: 16px; }
+   .basiclink:link { color: #FF0000; }
+   .basiclink:visited { color: #AA0000; }
+   .basiclink:hover { background-color: #FFFF00; }
+   .basiclink:active { background-color: #FF5500; }
+ 
+    .menulink { font-size: 16px; }
+    .menulink:link { color: #FF0000; }
+    .menulink:visited { color: #AA0000; }
+    .menulink:hover { background-color: #FFFF00; }
+    .menulink:active { background-color: #FF5500; }
+    
+  2) 사용
+   <A class="basiclink" style="text-decoration: none;" href="http://www.daum.net">Daum</A>
+   <A class="menulink" style="text-decoration: none;" href="http://www.kma.go.kr">기상청</A>
+
+ -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>style8.jsp</title>
+<style type="text/css">
+
+  /* 모든 태그에 적용 : 마진, 패딩 전부 0으로 */
+  *{ font-family: Malgun Gothic; font-size: 30px;}
+  .basiclink:link { color: #FF0000; text-decoration: none;}
+  .basiclink:visited { color: #AA0000; text-decoration: none;}
+  .basiclink:hover { color: #FF0000; font-weight: bold; text-decoration: none;}
+  .basiclink:active { background-color: #FF5500; text-decoration: none;}
+ 
+  .menulink:link { color: #FF0000; text-decoration: none;}
+  .menulink:visited { color: #AA0000; text-decoration: none;}
+  .menulink:hover { color: #00AA00; font-weight: bold; text-decoration: none;}
+  .menulink:active { background-color: #FF5500; text-decoration: none;}
+  
+  .classname:link { color: #002aff; text-decoration: none;}    /* 방문 전 상태 */
+  .classname:visited { color: #b5a903; text-decoration: none;}  /* 방문 후 상태 */
+  .classname:hover { color: #000000; font-weight: bold; text-decoration: none;} /* 마우스 올라가면 색상 */
+  .classname:active { background-color: #FFFFFF; text-decoration: none;}   /*클릭시 배경 흰색 */
+</style>
+</head>
+<body>
+<DIV style="margin: 50px;">A 태그에 CSS의 적용<br><br>
+  <A class="basiclink" href="http://www.daum.net">Daum</A>
+  <A class="menulink" href="http://www.kma.go.kr">기상청</A>
+  <A class="classname" href="https://www.naver.com" target='_blank'>네이버</A>
+</DIV>  
+</body>
+</html>

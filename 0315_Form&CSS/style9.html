@@ -1,0 +1,70 @@
+<!--0316
+ 8. class의 결합 사용
+ Q) 스타일 태그 안
+  .css-bold{ font-weight: bold;}
+  .css-red{ color: #FF0000;}
+ 
+  .css-bold .title{ /* css-bold class가 적용된 태그에 .title class가 들어가 있는 경우!! 5번 */
+  color: #FF9900;
+  font-size: 30px;
+  text-decortion: underline; }
+ 
+ A) Body 태그 안
+   <DIV class='css-bold css-red'>4. css-bold css-red</DIV>   동시적용 
+   
+  <DIV class='css-bold'>      부모 클래스 적용
+    <DIV class='title'>      자식 클래스에도 부모의 css 자동 적용 
+      5. css-bold .title       css-bold, title 동시 적용 
+    </DIV>
+  </DIV>
+ 
+  -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>style8.jsp</title>
+<style type="text/css">
+/* asterisk(*)를 통해 모든 태그에 적용되는 스타일을 뜻함. */
+  *{ font-family: Malgun Gothic; font-size: 30px;} 
+  DIV{/* DIV 태그에만 적용되는 스타일 */
+  /* marign 정렬로 가운데가 70%먹고 양옆이 15%씩 차지 */
+  margin : 0px auto; 
+  width : 70%}
+ 
+  .css-bold{
+  font-weight: bold;}
+
+  .css-red{
+  color: #FF0000;}
+  
+  .css-bold .title{ /* 5번 .css-bold class가 적용된 태그에 .title class가 들어가 있는 경우!! */
+  color: #FF9900;
+  font-size: 30px;
+  text-decortion: underline; }
+ 
+  .title{ /* 6번 .title class만 적용한 경우 : 5번과 다른 경우*/
+  color: #00FF00;
+  font-size: 40px;
+  text-decoration: line-through;}
+ 
+</style>
+</head>
+<body>
+  <DIV>1. class 속성을 적용하지 않은 경우</DIV>
+  <DIV class='css-bold'>2. css-bold</DIV>
+  <DIV class='css-red'>3. css-red</DIV>
+  
+  <DIV class='css-bold css-red'>4. css-bold css-red</DIV> <!-- 동시적용 -->
+  
+  <!-- 부모클래스인 css-bold와 자식클래스인 .title class의 결합 -->
+  <DIV class='css-bold'>  <!-- 부모 클래스 적용 -->
+    <DIV class='title'>      <!-- 자식 클래스에도 부모의 css 자동 적용 -->
+      5. css-bold .title       <!-- css-bold, title 동시 적용 -->
+    </DIV>
+  </DIV>
+  
+  <DIV class='title'>6. CSS 실습</DIV>
+
+</body>
+</html>
