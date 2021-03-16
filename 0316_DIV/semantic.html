@@ -1,0 +1,56 @@
+<!--0316
+ [02] <DIV> 태그를 의미(시멘틱) 기반으로 세분화 시킨 HTML5 신규 태그
+   - HTML4에서 HTML5로 넘어가면서 태그에 의미가 부여되는 기능이 추가
+   - DIV의 기능과 많이 비슷
+
+ 1. <HEADER> : 화면 상단의 제목을 의미
+ 2. <NAV> : 메뉴를 의미
+ 3. <ASIDE> : 서브 메뉴를 의미하며 화면 우측등에 출력.
+ 4. <SECTION> : 내용을 분할함을 의미, 미디어 뉴스의 분야등을 의미 
+  - <SECTION> 태그로 다시 분할될 수도
+ 5. <ARTICLE> : <SECTION> 태그에 속해서 출력되는 내용을 의미
+ - 한건의 기사등
+ 6. <FOOTER>:  화면 하단에 출력되는 내용을 의미
+  -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>semantic.html</title>
+<style type="text/css">
+  *{ font-family: Malgun Gothic; font-size: 26px;}
+</style>
+</head>
+
+<body>
+ <!-- <DIV class='header'>제목을 나타냄.</DIV> -->
+<header class='header'> 나의 블로그 </header>
+
+<nav class='nav'>      <!-- <DIV class='nav'>메뉴</DIV> -->
+  <span><a href='http://www.kma.go.kr' target='_blank'>기상청</a></span>
+  <span><a href='http://www.kyobobook.co.kr'>교보문고</a></span>
+  <span><a href='http://www.daum.net'>다음</a></span>
+</nav>
+
+<nav class='nav'>
+  <ul>
+    <li><a href='http://www.kma.go.kr'>기상청</a></li>
+    <li><a href='http://www.kyobobook.co.kr'>교보문고</a></li>
+    <li><a href='http://www.daum.net'>DAUM</a></li>
+  </ul>
+</nav>
+
+<section>  <!-- <DIV>  내용을 분할함을 의미, 미디어 뉴스의 분야등을 의미  -->
+  <section class="content">  <!--태그로 다시 분할될 수도 -->
+    내용
+  </section>
+  <aside class="right_menu">  <!-- 서브 메뉴 -->
+    등록 조회 답변 수정 삭제
+  </aside>
+</section>
+
+<footer class='footer'>  <!-- <DIV class='footer'>화면 하단에 출력되는 내용을 의미</DIV> -->
+  Copyright AI dev all rights reserved.
+</footer>
+</body>
+</html>
