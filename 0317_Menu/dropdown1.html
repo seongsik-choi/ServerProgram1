@@ -1,0 +1,91 @@
+<!--0317
+[19] 1단 메뉴의 구성(HTML, CSS만 사용하여 제작)       
+ [01] 1단 메뉴의 구성
+   -> 단체 들여쓰기(블록지정하고  Shitft + tab or tab0
+   
+    -> Action 창 띄우기 : <a href="javascript: alert('출력할 내용');">
+   <ul>
+       <li><a href="javascript: alert('국내여행');" class='link_menu_top'>국내 여행</a> 
+        <li><a href="javascript: alert('해외여행');" class='link_menu_top'>해외여행</a>
+        <li><a href="javascript: alert('영화');" class='link_menu_top'>영화</a>
+        <li><a href="javascript: alert('기타');" class='link_menu_top'>기타</a> 
+    </ul>
+
+  tip) <a href="#" class='link_menu_top'>국내 여행</a> 
+             엥커 태그를 이용한 태그 출력, #은 링크 기능 사용은 no
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>dropdown1.html</title>
+<style type="text/css">
+    
+* { /* 에스크립트 */
+    font-family: Malgun Gothic; 
+    font-size: 20px; 
+    color: #555555;
+    margin: 0;
+    padding: 0;   }
+  
+   ul li{ 
+        list-style: none;    /* 마커 삭제(블렛 기호)*/ 
+       }
+
+   .link_menu_top  /* .class  */
+   { 
+        text-decoration: none; /* 밑줄 없음 */
+        color: #FFFFFF;    }      /* 글짜 흰색 지정 */
+
+  .link_menu_top:hover   /* 링크 메뉴에 마우스 Over(올라가면) */
+  {
+    text-decoration: none;  /* 밑줄 없음 */
+    color: #FFFF00;    /*글짜 노란색 지정 */
+  }
+    
+  /* DIV 태그 id가 menu인 tag에 적용 */
+  #menu {
+    width: 100%;
+    height: 50px;
+    background: #DD0000;
+    line-height: 50px; 
+    margin:0 auto;
+    text-align: center;
+  }
+  
+  /*menu ul 부터는 거의 공식 : 가져다 쓰기만*/
+  /* float 속성의 가운데 정렬 선언 */
+  #menu ul {
+    float: inherit;    /* right 설정시 -> 가운데로   : 
+                              inherit(상속) 설정시 -> li가 왼쪽에 붙어서 나옴  + #menu>ul>li의 flot을 left로 */
+    position: relative; 
+    left: -50%;  
+  }
+  
+  /* top 메뉴 */
+  #menu > ul > li {
+    float:left;
+    width:130px;      /* menu 안 li에 마우스가 올라갔을때의 블록 넓이 */
+    position: relative;
+    left: 50%;    }
+
+  /* top 메뉴에 마우스가 hover되었을 때 배경색을 변경 */
+  #menu > ul > li:hover {
+    background-color: #000000;  }
+    
+</style>
+</head>
+
+<body>
+<div id="menu">
+    <ul>
+      <li><a href="javascript: alert('국내여행');" class='link_menu_top'>국내 여행</a> <!-- 엥커 태그를 이용한 태그 출력, #은 링크 기능 사용은 no-->
+      <li><a href="javascript: alert('해외여행');" class='link_menu_top'>해외여행</a> <!-- 엥커 태그를 이용한 태그 출력 -->
+      <li><a href="javascript: alert('영화');" class='link_menu_top'>영화</a>
+      <li><a href="javascript: alert('기타');" class='link_menu_top'>기타</a> 
+      <li><a href="javascript: alert('추천');" class='link_menu_top'>추천</a> 
+    </ul>
+</div>
+
+</body>
+</html>

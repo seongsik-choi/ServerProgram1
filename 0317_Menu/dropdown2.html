@@ -1,0 +1,153 @@
+<!--0317
+[19] 2단 메뉴의 구성(HTML, CSS만 사용하여 제작)       
+ [01] 2단 메뉴의 구성
+  1) Animation 효과
+   - linear : 전환(transition) 효과가 처음부터 끝까지 일정한 속도로 진행
+   - ease : 기본값으로, 전환(transition) 효과가 천천히 시작되어, 진행중에 빨라지고, 마지막에는 느려짐
+   - 사용: transition: ease 1s: Animation 효과 종류, 진행 시간
+
+ 2) float 속성이 적용된 태그의 가운데 정렬
+  /* float 속성의 가운데 정렬 선언 */
+  #menu ul {
+    float: right; 
+    position: relative; 
+    left: -50%;    }
+
+  /* top 메뉴 */
+  #menu > ul > li {
+    float:left;
+    width:130px;
+    position: relative;
+    left: 50%;  }
+    
+  tip) <a href="#" class='link_menu_top'>국내 여행</a> 
+             엥커 태그를 이용한 태그 출력, #은 링크 기능 사용은 no
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>dropdown2.html</title>
+<style type="text/css">
+    
+* { /* 에스크립트 */
+    font-family: Malgun Gothic; 
+    font-size: 20px; 
+    color: #555555;
+    margin: 0;
+    padding: 0;   }
+  
+   ul li{ 
+        list-style: none;    /* 마커 삭제(블렛 기호)*/ 
+       }
+
+   .link_menu_top  /* .class  */
+   { 
+        text-decoration: none; /* 밑줄 없음 */
+        color: #FFFFFF;    }      /* 글짜 흰색 지정 */
+
+  .link_menu_top:hover   /* 링크 메뉴에 마우스 Over(올라가면) */
+  {
+    text-decoration: none;  /* 밑줄 없음 */
+    color: #FFFF00;    /*글짜 노란색 지정 */
+  }
+    
+  .link_menu_sub {
+    text-decoration: none;
+    color: #FFFF00;
+  }
+
+  /* id에 적용 */
+  #menu {
+    width: 100%;
+    height: 50px;
+    background: #DD0000;
+    line-height: 50px; 
+    margin:0 auto;
+    text-align: center;
+  }
+  
+  /* float 속성의 가운데 정렬 선언 */
+  #menu ul {
+    float: inherit; 
+    position: relative; 
+    left: -50%;  
+  }
+
+  /* top 메뉴 */
+    #menu > ul > li {
+    float:left;
+    width:130px;
+    position: relative;
+    left: 50%;    }
+
+  /* top 메뉴에 마우스가 hover 되었을 때 배경색을 변경 */
+  #menu > ul > li:hover {
+    background-color: #FF0000;  /* 서브 메뉴들(밑에서 설정한 검은색)과 다른 색(빨간) */
+   }
+
+  /* 서브메뉴 속성 정의 */
+  /* 2단 메뉴 open시의 배경 */
+  #menu > ul > li > ul {
+    width:130px;
+    display:none;  /* 출력no, 특정상황에서 출력하기 위함 */
+    background: #FF0000;
+    position: relative;
+    left: 0%;    }
+    
+  /* 상단 메뉴에 마우스 hover시 하위 메뉴가 펼쳐지는 효과 발생 */
+  #menu > ul > li:hover > ul {
+    background-color: #000000;   /* 하위 메뉴가 펼쳐졌을 때 메뉴의 배경 색 */
+    display: block;                     /* diaply: block;   DIV 태그처럼 영역의 생성  */ 
+   }
+  
+  #menu > ul > li > ul > li:hover {
+     background: orange;    /* 하위 메뉴가 펼쳐지고 마우스가 올라갔을때 배경색 */
+     transition: ease 1s;    /* animation 효과 1초 발생 */       
+    }
+    
+</style>
+</head>
+
+<body>
+<div id="menu">
+    <ul>
+        
+       <li><a href="#" class='link_menu_top'>국내 여행</a> <!-- 엥커 태그를 이용한 태그 출력, #은 링크 기능 사용은 no-->
+           <ul>
+              <li><a href="javascript: alert('경기도');" class='link_menu_sub'>경기도</a></li>
+              <li><a href="javascript: alert('강원도');" class='link_menu_sub'>강원도</a></li>
+              <li><a href="javascript: alert('충청북도');" class='link_menu_sub'>충청북도</a></li>
+              <li><a href="javascript: alert('충처남도');" class='link_menu_sub'>충청남도</a></li>
+           </ul>
+       </li>
+        
+        <li><a href="#" class='link_menu_top'>해외여행</a> <!-- 엥커 태그를 이용한 태그 출력 -->
+            <ul>
+                <li><a href="#" class='link_menu_sub'>캐나다</a></li>
+                <li><a href="#" class='link_menu_sub'>스위스</a></li>
+                <li><a href="#" class='link_menu_sub'>오스트리아</a></li>
+            </ul>
+        </li>
+        
+        <li><a href="#" class='link_menu_top'>영화</a>
+            <ul>
+                <li><a href="#" class='link_menu_sub'>SF</a></li>
+                <li><a href="#" class='link_menu_sub'>스릴러</a></li>
+                <li><a href="#" class='link_menu_sub'>드라마</a></li>
+            </ul>
+        </li>
+        
+        <li><a href="#" class='link_menu_top'>기타</a>
+            <ul>
+                <li><a href="#" class='link_menu_sub'>드라이브</a></li>
+                <li><a href="#" class='link_menu_sub'>바다</a></li>
+                <li><a href="#" class='link_menu_sub'>맛집</a></li>
+            </ul>
+        </li>
+        
+    </ul>
+</div>
+
+</body>
+</html>
