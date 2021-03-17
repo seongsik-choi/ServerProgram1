@@ -47,3 +47,4 @@ ___
 * **dropdown.html(2단 deafult)/ dropdown1.html(1단 default)**
 * 0317 : [20] SSI(Server Side Include), index.jsp 제작, 화면 설계, 메뉴 구성   
 * 0317 : [20] SSI(Server Side Include), 화면분할  
+* **index.jsp : top.jsp + bottom.jsp + style.css를 jsp:include로 SSI활용**  
