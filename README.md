@@ -39,7 +39,7 @@ ___
 * 0312 : [12] 각종 태그의 초기값 설정, HTML 특수 문자 Entity, HTTP 상태 코드  
 * t10_output_form2.jsp : SELECT OPTION, RADIO, CHECKBOX, request.getParameter, request.getParameterValues, .indexOf(배열[]>=0) 복습  
 ___   
-* 0315 : 배웠던 내용을 통한 프로그램 만들기(from, proc.jsp)  
+* 0315 : 배웠던 내용을 통한 프로그램 만들기(form, proc.jsp)  
 * 0315 : [13] CSS(Cascading Style Sheet)의 사용, SPAN, DIV 기본 사용법, A 태그  
  ___  
 * 0316 : [14] DIV 태그를 이용한 세로 화면 분할, HEADER, NAV, SECTION, ASIDE, ARTICLE, FOOTER 태그  
