@@ -93,11 +93,9 @@ public class SungjukVO {
     return this.spring;  }
   
   public int getTot() {
-    tot = (java+jsp+spring);  // 여기서 tot은 멤버변수 field, setter로 호출 시 전송
     return this.tot;  }
   
   public int getAvg() {
-    avg = (java+jsp+spring)/3;
     return this.avg;  }
   
   
