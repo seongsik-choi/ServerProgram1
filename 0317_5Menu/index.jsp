@@ -1,5 +1,6 @@
 <%-- 
 0317
+중요!) 통합이 일어나는 index.jsp는 항상 default 폴더(WebContents)에 있어야만 가능
  4. 시작 페이지, index.jsp 
    - flush="false": index.jsp에 처리 결과를 통합하여 같이 접속자에게 출력
    
